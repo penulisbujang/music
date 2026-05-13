@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A personal music player — made with love for Mirza Paramitha Utami." />
+    <title>Untuk Mitha 🎵</title>
+
+    <!-- Google Fonts: Quicksand (body) + Playfair Display (display/headers) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Quicksand:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- External Stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+
+    <!-- ===================== AMBIENT BACKGROUND LAYER ===================== -->
+    <div class="bg-orbs" aria-hidden="true">
+      <span class="orb orb--1"></span>
+      <span class="orb orb--2"></span>
+      <span class="orb orb--3"></span>
+    </div>
+
+    <!-- ===================== WRAPPER ===================== -->
+    <div class="app-wrapper">
+
+      <!-- =========================================================
+           HEADER — Dedication
+      ========================================================== -->
+      <header class="site-header">
+        <div class="header-inner">
+          <p class="header-eyebrow">♡ sebuah hadiah kecil</p>
+          <h1 class="header-dedication">
+            Khusus dibuat untuk
+            <em class="header-name">Mirza Paramitha Utami</em>,
+            agar lagu&#8209;lagu kesukaanmu selalu ada di sini.
+          </h1>
+          <p class="header-from">— dari Haaziq, dengan sepenuh hati 🌙</p>
+        </div>
+      </header>
+
+      <!-- =========================================================
+           MAIN PLAYER CARD
+      ========================================================== -->
+      <main class="player-card" role="main">
+
+        <!-- ── NOW PLAYING ── -->
+        <section class="now-playing" aria-label="Now Playing">
+
+          <!-- Cover Art Slider -->
+          <div class="cover-art-container" aria-label="Album cover slideshow">
+            <div class="cover-slider-track" id="coverSliderTrack">
+              <!--
+                10 image slides injected here by app.js
+                Structure per slide:
+                <div class="cover-slide">
+                  <img src="..." alt="..." class="cover-img" />
+                </div>
+              -->
+              <div class="cover-slide active" data-index="0">
+                <img src="" alt="Cover Art 1" class="cover-img" id="coverImg0" />
+              </div>
+              <div class="cover-slide" data-index="1">
+                <img src="" alt="Cover Art 2" class="cover-img" id="coverImg1" />
+              </div>
+              <div class="cover-slide" data-index="2">
+                <img src="" alt="Cover Art 3" class="cover-img" id="coverImg2" />
+              </div>
+              <div class="cover-slide" data-index="3">
+                <img src="" alt="Cover Art 4" class="cover-img" id="coverImg3" />
+              </div>
+              <div class="cover-slide" data-index="4">
+                <img src="" alt="Cover Art 5" class="cover-img" id="coverImg4" />
+              </div>
+              <div class="cover-slide" data-index="5">
+                <img src="" alt="Cover Art 6" class="cover-img" id="coverImg5" />
+              </div>
+              <div class="cover-slide" data-index="6">
+                <img src="" alt="Cover Art 7" class="cover-img" id="coverImg6" />
+              </div>
+              <div class="cover-slide" data-index="7">
+                <img src="" alt="Cover Art 8" class="cover-img" id="coverImg7" />
+              </div>
+              <div class="cover-slide" data-index="8">
+                <img src="" alt="Cover Art 9" class="cover-img" id="coverImg8" />
+              </div>
+              <div class="cover-slide" data-index="9">
+                <img src="" alt="Cover Art 10" class="cover-img" id="coverImg9" />
+              </div>
+            </div>
+
+            <!-- Slider Dots Navigation -->
+            <div class="cover-dots" role="tablist" aria-label="Cover art navigation" id="coverDots">
+              <button class="dot active" role="tab" aria-selected="true"  data-dot="0" aria-label="Slide 1"></button>
+              <button class="dot"        role="tab" aria-selected="false" data-dot="1" aria-label="Slide 2"></button>
+              <button class="dot"        role="tab" aria-selected="false" data-dot="2" aria-label="Slide 3"></button>
+              <button class="dot"        role="tab" aria-selected="false" data-dot="3" aria-label="Slide 4"></button>
+              <button class="dot"        role="tab" aria-selected="false" data-dot="4" aria-label="Slide 5"></button>
+              <button class="dot"        role="tab" aria-selected="false" data-dot="5" aria-label="Slide 6"></button>
+              <button class="dot"        role="tab" aria-selected="false" data-dot="6" aria-label="Slide 7"></button>
+              <button class="dot"        role="tab" aria-selected="false" data-dot="7" aria-label="Slide 8"></button>
+              <button class="dot"        role="tab" aria-selected="false" data-dot="8" aria-label="Slide 9"></button>
+              <button class="dot"        role="tab" aria-selected="false" data-dot="9" aria-label="Slide 10"></button>
+            </div>
+          </div><!-- /.cover-art-container -->
+
+          <!-- Song Meta Info -->
+          <div class="song-meta">
+            <h2 class="song-title" id="songTitle">—</h2>
+            <p  class="song-artist" id="songArtist">Pilih lagu untuk mulai</p>
+          </div>
+
+        </section><!-- /.now-playing -->
+
+        <!-- ── PROGRESS BAR ── -->
+        <section class="progress-section" aria-label="Playback progress">
+          <div class="time-row">
+            <span class="time-current" id="timeCurrent">0:00</span>
+            <span class="time-total"   id="timeTotal">0:00</span>
+          </div>
+          <div class="progress-bar-wrapper">
+            <input
+              type="range"
+              class="progress-bar"
+              id="progressBar"
+              min="0"
+              max="100"
+              value="0"
+              step="0.1"
+              aria-label="Seek track position"
+            />
+            <div class="progress-fill" id="progressFill"></div>
+          </div>
+        </section><!-- /.progress-section -->
+
+        <!-- ── MEDIA CONTROLS ── -->
+        <section class="media-controls" aria-label="Media controls">
+
+          <!-- Shuffle -->
+          <button class="ctrl-btn ctrl-btn--secondary" id="btnShuffle" aria-label="Shuffle" title="Shuffle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="16 3 21 3 21 8"/>
+              <line x1="4" y1="20" x2="21" y2="3"/>
+              <polyline points="21 16 21 21 16 21"/>
+              <line x1="15" y1="15" x2="21" y2="21"/>
+            </svg>
+          </button>
+
+          <!-- Previous -->
+          <button class="ctrl-btn ctrl-btn--primary" id="btnPrev" aria-label="Previous track" title="Previous">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <polygon points="19 20 9 12 19 4 19 20"/>
+              <line x1="5" y1="19" x2="5" y2="5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </button>
+
+          <!-- Play / Pause -->
+          <button class="ctrl-btn ctrl-btn--play" id="btnPlay" aria-label="Play" aria-pressed="false" title="Play / Pause">
+            <!-- Play icon (shown when paused) -->
+            <svg class="icon-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <polygon points="5 3 19 12 5 21 5 3"/>
+            </svg>
+            <!-- Pause icon (shown when playing) -->
+            <svg class="icon-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <rect x="6"  y="4" width="4" height="16" rx="1"/>
+              <rect x="14" y="4" width="4" height="16" rx="1"/>
+            </svg>
+          </button>
+
+          <!-- Next -->
+          <button class="ctrl-btn ctrl-btn--primary" id="btnNext" aria-label="Next track" title="Next">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <polygon points="5 4 15 12 5 20 5 4"/>
+              <line x1="19" y1="5" x2="19" y2="19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </button>
+
+          <!-- Repeat -->
+          <button class="ctrl-btn ctrl-btn--secondary" id="btnRepeat" aria-label="Repeat" title="Repeat">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="17 1 21 5 17 9"/>
+              <path d="M3 11V9a4 4 0 0 1 4-4h14"/>
+              <polyline points="7 23 3 19 7 15"/>
+              <path d="M21 13v2a4 4 0 0 1-4 4H3"/>
+            </svg>
+          </button>
+
+        </section><!-- /.media-controls -->
+
+        <!-- Volume Control -->
+        <div class="volume-row" aria-label="Volume control">
+          <svg class="volume-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+            <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+          </svg>
+          <input
+            type="range"
+            class="volume-bar"
+            id="volumeBar"
+            min="0"
+            max="1"
+            value="0.8"
+            step="0.01"
+            aria-label="Volume"
+          />
+        </div>
+
+        <!-- Hidden Audio Element -->
+        <audio id="audioPlayer" preload="metadata"></audio>
+
+      </main><!-- /.player-card -->
+
+      <!-- =========================================================
+           PLAYLIST SECTION — Category Tabs + Song List
+      ========================================================== -->
+      <section class="playlist-section" aria-label="Playlist">
+
+        <!-- Category / Folder Tabs -->
+        <nav class="category-nav" role="tablist" aria-label="Song categories" id="categoryNav">
+          <!--
+            Tab buttons are injected dynamically by app.js from data.js.
+            Example structure:
+            <button class="tab-btn active" role="tab" aria-selected="true" data-category="penyanyi-a">
+              Penyanyi A
+            </button>
+          -->
+          <button class="tab-btn active" role="tab" aria-selected="true" data-category="" id="defaultTab">
+            Memuat…
+          </button>
+        </nav>
+
+        <!-- Song List Container -->
+        <div class="song-list-wrapper">
+          <ul class="song-list" id="songList" role="list" aria-label="Song list">
+            <!--
+              Song items are injected dynamically by app.js.
+              Example structure per item:
+              <li class="song-item" role="listitem" data-song-index="0">
+                <div class="song-item__num">1</div>
+                <div class="song-item__info">
+                  <span class="song-item__title">Judul Lagu</span>
+                  <span class="song-item__artist">Nama Penyanyi</span>
+                </div>
+                <div class="song-item__duration">3:45</div>
+              </li>
+            -->
+          </ul>
+
+          <!-- Empty / Loading State -->
+          <p class="playlist-empty" id="playlistEmpty" aria-live="polite">
+            Pilih kategori di atas untuk melihat daftar lagu ✨
+          </p>
+        </div>
+
+      </section><!-- /.playlist-section -->
+
+      <!-- =========================================================
+           FOOTER
+      ========================================================== -->
+      <footer class="site-footer">
+        <p>Dibuat dengan <span aria-label="cinta">♡</span> oleh <strong>Muhammad Haaziq Bujang Syarif</strong></p>
+        <p class="footer-sub">untuk satu orang yang selalu bikin hari jadi lebih indah.</p>
+      </footer>
+
+    </div><!-- /.app-wrapper -->
+
+    <!-- External Scripts (order matters) -->
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+
+  </body>
+</html>
