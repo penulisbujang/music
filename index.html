@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="A personal music player — made with love for Mirza Paramitha Utami." />
-    <title>Untuk Mitha 🎵</title>
+    <title>Our Music</title>
 
     <!-- Google Fonts: Quicksand (body) + Playfair Display (display/headers) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -35,13 +35,11 @@
       ========================================================== -->
       <header class="site-header">
         <div class="header-inner">
-          <p class="header-eyebrow">♡ sebuah hadiah kecil</p>
+          <p class="header-eyebrow">♡ EXCLUSIVE PLAYLIST</p>
           <h1 class="header-dedication">
-            Khusus dibuat untuk
-            <em class="header-name">Mirza Paramitha Utami</em>,
-            agar lagu&#8209;lagu kesukaanmu selalu ada di sini.
+            Frekuensi Ridu
           </h1>
-          <p class="header-from">— dari Haaziq, dengan sepenuh hati 🌙</p>
+          <p class="header-from">— mengudara melintasi jarak</p>
         </div>
       </header>
 
@@ -141,57 +139,43 @@
 
         <!-- ── MEDIA CONTROLS ── -->
         <section class="media-controls" aria-label="Media controls">
+  <button class="ctrl-btn ctrl-btn--secondary ctrl-btn--heart" id="btnHeart" aria-label="Like" title="I Love You Sayangku">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+    </svg>
+  </button>
 
-          <!-- Shuffle -->
-          <button class="ctrl-btn ctrl-btn--secondary" id="btnShuffle" aria-label="Shuffle" title="Shuffle">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <polyline points="16 3 21 3 21 8"/>
-              <line x1="4" y1="20" x2="21" y2="3"/>
-              <polyline points="21 16 21 21 16 21"/>
-              <line x1="15" y1="15" x2="21" y2="21"/>
-            </svg>
-          </button>
+  <button class="ctrl-btn ctrl-btn--primary" id="btnPrev" aria-label="Previous track" title="Previous">
+    <svg viewBox="0 0 24 24" fill="currentColor">
+      <polygon points="19 20 9 12 19 4 19 20"/>
+      <line x1="5" y1="19" x2="5" y2="5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+  </button>
 
-          <!-- Previous -->
-          <button class="ctrl-btn ctrl-btn--primary" id="btnPrev" aria-label="Previous track" title="Previous">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <polygon points="19 20 9 12 19 4 19 20"/>
-              <line x1="5" y1="19" x2="5" y2="5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-            </svg>
-          </button>
+  <button class="ctrl-btn ctrl-btn--play" id="btnPlay" aria-label="Play" aria-pressed="false" title="Play / Pause">
+    <svg class="icon-play" viewBox="0 0 24 24" fill="currentColor">
+      <polygon points="5 3 19 12 5 21 5 3"/>
+    </svg>
+    <svg class="icon-pause" viewBox="0 0 24 24" fill="currentColor">
+      <rect x="6" y="4" width="4" height="16" rx="1"/>
+      <rect x="14" y="4" width="4" height="16" rx="1"/>
+    </svg>
+  </button>
 
-          <!-- Play / Pause -->
-          <button class="ctrl-btn ctrl-btn--play" id="btnPlay" aria-label="Play" aria-pressed="false" title="Play / Pause">
-            <!-- Play icon (shown when paused) -->
-            <svg class="icon-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <polygon points="5 3 19 12 5 21 5 3"/>
-            </svg>
-            <!-- Pause icon (shown when playing) -->
-            <svg class="icon-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <rect x="6"  y="4" width="4" height="16" rx="1"/>
-              <rect x="14" y="4" width="4" height="16" rx="1"/>
-            </svg>
-          </button>
+  <button class="ctrl-btn ctrl-btn--primary" id="btnNext" aria-label="Next track" title="Next">
+    <svg viewBox="0 0 24 24" fill="currentColor">
+      <polygon points="5 4 15 12 5 20 5 4"/>
+      <line x1="19" y1="5" x2="19" y2="19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+  </button>
 
-          <!-- Next -->
-          <button class="ctrl-btn ctrl-btn--primary" id="btnNext" aria-label="Next track" title="Next">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <polygon points="5 4 15 12 5 20 5 4"/>
-              <line x1="19" y1="5" x2="19" y2="19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-            </svg>
-          </button>
-
-          <!-- Repeat -->
-          <button class="ctrl-btn ctrl-btn--secondary" id="btnRepeat" aria-label="Repeat" title="Repeat">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <polyline points="17 1 21 5 17 9"/>
-              <path d="M3 11V9a4 4 0 0 1 4-4h14"/>
-              <polyline points="7 23 3 19 7 15"/>
-              <path d="M21 13v2a4 4 0 0 1-4 4H3"/>
-            </svg>
-          </button>
-
-        </section><!-- /.media-controls -->
+  <button class="ctrl-btn ctrl-btn--secondary ctrl-btn--poetry" id="btnPoetry" aria-label="Poetry" title="I Miss You Sayangku">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+      <polyline points="22,6 12,13 2,6"></polyline>
+    </svg>
+  </button>
+</section>
 
         <!-- Volume Control -->
         <div class="volume-row" aria-label="Volume control">
@@ -265,8 +249,8 @@
            FOOTER
       ========================================================== -->
       <footer class="site-footer">
-        <p>Dibuat dengan <span aria-label="cinta">♡</span> oleh <strong>Muhammad Haaziq Bujang Syarif</strong></p>
-        <p class="footer-sub">untuk satu orang yang selalu bikin hari jadi lebih indah.</p>
+        <p><strong>Haaziq</strong> <span aria-label="cinta">♡</span><strong> Mitha</strong></p>
+        <p class="footer-sub">Semoga kita selalu bersama, sayangku ♡ྀི</p>
       </footer>
 
     </div><!-- /.app-wrapper -->
@@ -274,6 +258,5 @@
     <!-- External Scripts (order matters) -->
     <script src="data.js"></script>
     <script src="app.js"></script>
-
   </body>
 </html>
