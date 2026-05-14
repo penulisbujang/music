@@ -17,6 +17,8 @@ const MUSIC_DATA = [
       "./covers/foto8.jpg",
       "./covers/foto9.jpg",
       "./covers/foto10.jpg",
+      "./covers/foto11.jpg",
+      "./covers/foto12.jpg",
     ],
     songs: [
       {
@@ -55,6 +57,8 @@ const MUSIC_DATA = [
       "./covers/foto8.jpg",
       "./covers/foto9.jpg",
       "./covers/foto10.jpg",
+      "./covers/foto11.jpg",
+      "./covers/foto12.jpg",
     ],
     songs: [
       {
@@ -101,6 +105,8 @@ const MUSIC_DATA = [
       "./covers/foto8.jpg",
       "./covers/foto9.jpg",
       "./covers/foto10.jpg",
+      "./covers/foto11.jpg",
+      "./covers/foto12.jpg",
     ],
     songs: [
       {
@@ -117,6 +123,52 @@ const MUSIC_DATA = [
         artist: "Backstreet Boys",
         src: "./Backstreet Boys/Shape of My Heart.m4a",
         cover: "./covers/foto7.jpg",
+        duration: "0:00",
+      }
+    ],
+  },
+
+  /* ──────────────────────────────────────────────────────────
+     CATEGORY 4 — NDX AKA
+  ────────────────────────────────────────────────────────── */
+  {
+    id: "ndx-aka",
+    label: "NDX AKA",
+    covers: [
+      "./covers/foto1.jpg",
+      "./covers/foto2.jpg",
+      "./covers/foto3.jpg",
+      "./covers/foto4.jpg",
+      "./covers/foto5.jpg",
+      "./covers/foto6.jpg",
+      "./covers/foto7.jpg",
+      "./covers/foto8.jpg",
+      "./covers/foto9.jpg",
+      "./covers/foto10.jpg",
+    ],
+    songs: [
+      {
+        id: 0,
+        title: "Ditinggal Rabi",
+        artist: "NDX AKA",
+        src: "./NDX AKA/Ditinggal Rabi.m4a",
+        cover: "./covers/foto8.jpg",
+        duration: "0:00",
+      },
+      {
+        id: 1,
+        title: "Nemen",
+        artist: "NDX AKA",
+        src: "./NDX AKA/Nemen.m4a",
+        cover: "./covers/foto9.jpg",
+        duration: "0:00",
+      },
+      {
+        id: 2,
+        title: "Tresno Tekan Mati",
+        artist: "NDX AKA",
+        src: "./NDX AKA/Tresno Tekan Mati.m4a",
+        cover: "./covers/foto10.jpg",
         duration: "0:00",
       }
     ],
